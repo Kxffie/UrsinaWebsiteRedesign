@@ -22,6 +22,10 @@ export default defineConfig({
 					label: 'Examples',
 					autogenerate: { directory: 'examples' },
 				},
+				{
+					label: 'Asset Store',
+					autogenerate: { directory: 'asset-store' },
+				},
 			],
 		}),
 	],

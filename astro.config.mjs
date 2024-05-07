@@ -6,6 +6,9 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Ursina Engine Docs',
+			customCss: [
+				'./src/content/docs/reference/reference.css'
+			],
 			social: {
 				github: 'https://github.com/pokepetter/ursina/',
 			},

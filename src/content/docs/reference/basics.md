@@ -4,8 +4,6 @@ sidebar:
   order: 1
 ---
 
-<!-- markdownlint-disable MD033 -->
-<!-- markdownlint-disable MD024 -->
 ## Main Import: <span class="syntax">ursina/main</span>
 
 The main import, <span class="syntax">ursina/main</span>, provides essential functionalities and configurations to kickstart your project. It initializes the Ursina application with customizable options such as title, icon, window settings, and more.
@@ -558,40 +556,3 @@ def input(key):
 # Run the application
 app.run()
 ```
-
-<style>
-    .parameters {
-        color: rgb(130,170,255);
-        font-weight: 600;
-    }
-
-    .properties {
-        color: rgb(127,219,196);
-        font-weight: 600;
-    }
-
-    .boolean {
-        color: rgb(255,88,116);
-        font-weight: 550;
-    }
-
-    .function {
-        color: rgb(178,204,214);
-        font-weight: 600;
-    }
-
-    .syntax {
-      color: rgb(130,170,255);
-    }
-
-    .number {
-      color: rgb(245,140,108);
-      font-weight: 550;
-    }
-
-    .string {
-      color: rgb(255,203,107);
-      font-weight: 550;
-    }
-
-</style>

@@ -5,12 +5,14 @@ title: Downloading and Installing Ursina
 Ursina is a Python-based game engine for creating 2D and 3D games and simulations. Before getting started, if you need any help, please consider joining the Ursina Engine Discord Server
 
 <div class="not-content">
-  <iframe src="https://discord.com/widget?id=593486730187899041&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" />
+  <iframe src="https://discord.com/widget?id=593486730187899041&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 </div>
 
 ## Step 1: Install Python
 
 Ensure you have Python 3.10 or newer installed on your system. You can download and install Python from the [official website](https://www.python.org/downloads/).
+
+---
 
 ## Step 2: Install Ursina using pip
 
@@ -19,6 +21,8 @@ Open your command prompt or terminal and type the following command to install U
 ```bash
 pip install ursina
 ```
+
+---
 
 ### Installing the latest version from GitHub
 

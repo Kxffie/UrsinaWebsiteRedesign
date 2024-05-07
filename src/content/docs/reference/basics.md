@@ -4,9 +4,11 @@ sidebar:
   order: 1
 ---
 
-## Main Import: `ursina/main`
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD024 -->
+## Main Import: <span class="syntax">ursina/main</span>
 
-The main import, `ursina/main`, provides essential functionalities and configurations to kickstart your project. It initializes the Ursina application with customizable options such as title, icon, window settings, and more.
+The main import, <span class="syntax">ursina/main</span>, provides essential functionalities and configurations to kickstart your project. It initializes the Ursina application with customizable options such as title, icon, window settings, and more.
 
 ### Importing Ursina
 
@@ -18,37 +20,46 @@ from ursina import *
 
 ### Parameters
 
-- **`Ursina(title='ursina', icon='textures/ursina.ico', borderless=True, fullscreen=False, size=None, forced_aspect_ratio=None, position=None, vsync=True, editor_ui_enabled=True, window_type='onscreen', development_mode=True, render_mode=None, show_ursina_splash=False, **kwargs)`**: This function initializes the Ursina application with various parameters to customize the application window and behavior.
+```python
+Ursina(title='ursina', icon='textures/ursina.ico', borderless=True,
+   fullscreen=False, size=None, forced_aspect_ratio=None,
+   position=None, vsync=True, editor_ui_enabled=True,
+   window_type='onscreen', development_mode=True, render_mode=None,
+   show_ursina_splash=False, **kwargs
+)
+
+# This function initializes the Ursina application with various 
+# parameters to customize the application window and behavior.
+```
 
 - **Parameters include:**
-  - `title`: The title of the application window.
-  - `icon`: Path to the icon file for the application window.
-  - `borderless`: If `True`, the window will be borderless.
-  - `fullscreen`: If `True`, the window will be fullscreen.
-  - `size`: Tuple specifying the size of the window.
-  - `forced_aspect_ratio`: Aspect ratio to enforce for the window.
-  - `position`: Tuple specifying the initial position of the window.
-  - `vsync`: If `True`, the application will synchronize with the vertical refresh rate.
-  - `editor_ui_enabled`: If `True`, the in-game editor UI will be enabled.
-  - `window_type`: Type of the window ('onscreen', 'fullscreen', etc.).
-  - `development_mode`: If `True`, the application is in development mode.
-  - `render_mode`: Rendering mode for the application.
-  - `show_ursina_splash`: If `True`, the Ursina splash screen will be displayed.
-  - `**kwargs`: Additional keyword arguments for customization.
+  - <span class="parameters">title</span>: The title of the application window.
+  - <span class="parameters">icon</span>: Path to the icon file for the application window.
+  - <span class="parameters">borderless</span>: If <span class="boolean">True</span>, the window will be borderless.
+  - <span class="parameters">fullscreen</span>: If <span class="boolean">True</span>, the window will be fullscreen.
+  - <span class="parameters">size</span>: Tuple specifying the size of the window.
+  - <span class="parameters">forced_aspect_ratio</span>: Aspect ratio to enforce for the window.
+  - <span class="parameters">position</span>: Tuple specifying the initial position of the window.
+  - <span class="parameters">vsync</span>: If <span class="boolean">True</span>, the application will synchronize with the vertical refresh rate.
+  - <span class="parameters">editor_ui_enabled</span>: If <span class="boolean">True</span>, the in-game editor UI will be enabled.
+  - <span class="parameters">window_type</span>: Type of the window (<span class="string">'onscreen'</span>, <span class="string">'fullscreen'</span>, etc.).
+  - <span class="parameters">development_mode</span>: If <span class="boolean">True</span>, the application is in development mode.
+  - <span class="parameters">render_mode</span>: Rendering mode for the application.
+  - <span class="parameters">show_ursina_splash</span>: If <span class="boolean">True</span>, the Ursina splash screen will be displayed.
+  - <span class="parameters">**kwargs</span>: Additional keyword arguments for customization.
 
 ### Properties
 
-- **`mouse`**: The `mouse` object provides access to mouse input functionalities, allowing interaction with the application.
-
+- <span class="properties">mouse</span>: The <span class="syntax">mouse</span> object provides access to mouse input functionalities, allowing interaction with the application.
 
 ### Functions
 
-  - `input_up(key, is_raw=False)`: Internal method for handling key release events.
-  - `input_hold(key, is_raw=False)`: Internal method for handling repeated input when a key is held.
-  - `input(key, is_raw=False)`: Internal method for handling input events.
-  - `text_input(key)`: Internal method for handling text input events.
-  - `step()`: Allows manual control of the update loop.
-  - `run(info=True)`: Starts the Ursina application.
+- <span class="function">input_up</span>(<span class="syntax">key</span>, <span class="syntax">is_raw</span>=<span class="boolean">False</span>): Internal method for handling key release events.
+- <span class="function">input_hold</span>(<span class="syntax">key</span>, <span class="syntax">is_raw</span>=<span class="boolean">False</span>): Internal method for handling repeated input when a key is held.
+- <span class="function">input</span>(<span class="syntax">key</span>, <span class="syntax">is_raw</span>=<span class="boolean">False</span>): Internal method for handling input events.
+- <span class="function">text_input</span>(<span class="syntax">key</span>): Internal method for handling text input events.
+- <span class="function">step</span>(): Allows manual control of the update loop.
+- <span class="function">run</span>(info=<span class="boolean">True</span>): Starts the Ursina application.
 
 ### **Main Import Example**
 
@@ -70,11 +81,11 @@ app.run()
 
 ## Button Prefab
 
-The `Button` prefab in Ursina is a specialized entity designed for creating interactive buttons in 2D or UI space. It inherits from the `Entity` class and provides additional functionality for handling mouse input and button events.
+The <span class="syntax">Button</span> prefab in Ursina is a specialized entity designed for creating interactive buttons in 2D or UI space. It inherits from the <span class="syntax">Entity</span> class and provides additional functionality for handling mouse input and button events.
 
 ### Importing the Button Prefab
 
-You can import the `Button` prefab using the following import statement:
+You can import the <span class="syntax">Button</span> prefab using the following import statement:
 
 ```python
 from ursina.prefabs.button import Button
@@ -82,36 +93,47 @@ from ursina.prefabs.button import Button
 
 ### Parameters
 
-- **text**: The text displayed on the button.
-- **parent**: The parent entity of the button. By default, the button is attached to the UI space (`camera.ui`).
-- **model**: The model used for the button's visual representation.
-- **radius**: The radius of the button's collider.
-- **origin**: The origin point of the button.
-- **text_origin**: The origin point of the button's text.
-- **text_size**: The size of the button's text.
-- **color**: The color of the button.
-- **collider**: The type of collider used for the button.
-- **highlight_scale**: The scale multiplier applied when the button is highlighted.
-- **pressed_scale**: The scale multiplier applied when the button is pressed.
-- **disabled**: Boolean indicating whether the button is disabled.
-- `**kwargs`: Additional keyword arguments for customization.
+```python
+Button(text='', parent=camera.ui, model='quad', radius=.25, 
+    origin=(-.5, .5), text_origin=(0,0), text_size=1, 
+    color=color.white66, collider='box', highlight_scale=.02, 
+    pressed_scale=.9, disabled=False, **kwargs
+)
+
+# This function initializes the Button class with various 
+# parameters to customize the application window and behavior.
+```
+
+- <span class="parameters">text</span>: The text displayed on the button.
+- <span class="parameters">parent</span>: The parent entity of the button. By default, the button is attached to the UI space (<span class="boolean">camera.ui</span>).
+- <span class="parameters">model</span>: The model used for the button's visual representation.
+- <span class="parameters">radius</span>: The radius of the button's collider.
+- <span class="parameters">origin</span>: The origin point of the button.
+- <span class="parameters">text_origin</span>: The origin point of the button's text.
+- <span class="parameters">text_size</span>: The size of the button's text.
+- <span class="parameters">color</span>: The color of the button.
+- <span class="parameters">collider</span>: The type of collider used for the button.
+- <span class="parameters">highlight_scale</span>: The scale multiplier applied when the button is highlighted.
+- <span class="parameters">pressed_scale</span>: The scale multiplier applied when the button is pressed.
+- <span class="parameters">disabled</span>: Boolean indicating whether the button is disabled.
+- <span class="parameters">**kwargs</span>: Additional keyword arguments for customization.
 
 ### Properties
 
-- **.text**: The text displayed on the button.
-- **.text_origin**: The origin point of the button's text.
-- **.text_color**: The color of the button's text.
-- **.icon**: The icon displayed on the button.
-- **.icon_world_scale**: The world scale of the button's icon.
-- **.text_size**: The size of the button's text.
-- **.origin**: The origin point of the button.
+- <span class="properties">.text</span>: The text displayed on the button.
+- <span class="properties">.text_origin</span>: The origin point of the button's text.
+- <span class="properties">.text_color</span>: The color of the button's text.
+- <span class="properties">.icon</span>: The icon displayed on the button.
+- <span class="properties">.icon_world_scale</span>: The world scale of the button's icon.
+- <span class="properties">.text_size</span>: The size of the button's text.
+- <span class="properties">.origin</span>: The origin point of the button.
 
 ### Functions
 
-- **input(key)**: Handles keyboard input events.
-- **on_mouse_enter()**: Called when the mouse enters the button.
-- **on_mouse_exit()**: Called when the mouse exits the button.
-- **fit_to_text(radius=.1, padding=Vec2(Text.size*1.5, Text.size))**: Resizes the button to fit its text content.
+- <span class="function">input</span>(<span class="syntax">key</span>): Handles keyboard input events.
+- <span class="function">on_mouse_enter</span>(): Called when the mouse enters the button.
+- <span class="function">on_mouse_exit</span>(): Called when the mouse exits the button.
+- <span class="function">fit_to_text</span>(<span class="syntax">radius</span>=<span class="number">.1</span>, <span class="syntax">padding</span>=<span class="function">Vec2</span>(Text.size*<span class="number">1.5</span>, Text.size)): Resizes the button to fit its text content.
 
 ### Example Usage
 
@@ -138,41 +160,47 @@ app.run()
 
 ## Entity Class
 
-The `Entity` class in Ursina represents a game object or entity within the game world. It provides various properties and functions for manipulating and interacting with entities.
+The <span class="syntax">Entity</span> class in Ursina represents a game object or entity within the game world. It provides various properties and functions for manipulating and interacting with entities.
 
 ### Creating Entities
 
-To generate entities in your Ursina game, you can use the `Entity` class. This class allows you to create versatile game objects with customizable properties and behaviors. Below is a step-by-step guide on how to generate entities:
+To generate entities in your Ursina game, you can use the <span class="syntax">Entity</span> class. This class allows you to create versatile game objects with customizable properties and behaviors. Below is a step-by-step guide on how to generate entities:
 
-1. **Import the Entity Class**: Ensure you have the Entity class available by importing it from Ursina.
+1. <span class="properties">Import the Entity Class</span>: Ensure you have the Entity class available by importing it from Ursina.
+
    ```python
    from ursina import Entity
    ```
 
-2. **Create an Instance of Entity**: You can create an entity by instantiating the `Entity` class. You can specify various parameters such as `model`, `color`, `position`, etc.
+2. <span class="properties">Create an Instance of Entity</span>: You can create an entity by instantiating the <span class="syntax">Entity</span> class. You can specify various parameters such as <span class="syntax">model</span>, <span class="syntax">color</span>, <span class="syntax">position</span>, etc.
+
    ```python
    entity = Entity(model='cube', color=color.white, position=(0,0,0))
    ```
 
-3. **Customize the Entity**: After creating an entity, you can further customize it by setting its properties. For example, you can change its scale, rotation, or add a texture.
+3. <span class="properties">Customize the Entity</span>: After creating an entity, you can further customize it by setting its properties. For example, you can change its scale, rotation, or add a texture.
+
    ```python
    entity.scale = (2, 2, 2)
    entity.rotation_y = 45
    entity.texture = 'brick'
    ```
 
-4. **Add Functionality**: Entities can have behaviors defined by attaching scripts or using built-in methods. For example, you can make an entity rotate continuously.
+4. <span class="properties">Add Functionality</span>: Entities can have behaviors defined by attaching scripts or using built-in methods. For example, you can make an entity rotate continuously.
+
    ```python
    def update():
        entity.rotation_y += 1
    ```
 
-5. **Organize Entities**: You can organize entities by setting parents or grouping them into scenes.
+5. <span class="properties">Organize Entities</span>: You can organize entities by setting parents or grouping them into scenes.
+
    ```python
    another_entity = Entity(parent=entity)
    ```
 
-6. **Interact with Entities**: Entities can interact with user inputs or other game elements. Define functions to handle these interactions.
+6. <span class="properties">Interact with Entities</span>: Entities can interact with user inputs or other game elements. Define functions to handle these interactions.
+
    ```python
    def input(key):
        if key == 'space':
@@ -181,30 +209,34 @@ To generate entities in your Ursina game, you can use the `Entity` class. This c
 
 ### Parameters
 
-- **`Entity(add_to_scene_entities=True, enabled=True, **kwargs)`**: Initializes an entity with customizable options and attributes.
+```python
+Enity(add_to_scene_entities=True, enabled=True, **kwargs)
 
-- `add_to_scene_entities`: Boolean indicating whether to add the entity to the scene entities.
-- `enabled`: Boolean indicating whether the entity is initially enabled.
-- `**kwargs`: Additional keyword arguments for customization.
+# Initializes an entity with customizable options and attributes.
+```
 
+- <span class="parameters">add_to_scene_entities</span>: Boolean indicating whether to add the entity to the scene entities.
+- <span class="parameters">enabled</span>: Boolean indicating whether the entity is initially enabled.
+- <span class="parameters">**kwargs</span>: Additional keyword arguments for customization.
 
 ### Properties
 
-  - `.enabled`: Disables or enables the entity. Disabled entities are not visible nor run code.
-  - `.model`: Sets the model of the entity.
-  - `.color`: Sets the color of the entity.
-  - `.eternal`: Determines if the entity is eternal and does not get destroyed on scene clear.
-  - `.parent`: Sets the parent of the entity.
-  - `.position`: Sets the position of the entity.
-  - `.rotation`: Sets the rotation of the entity.
-  - `.scale`: Sets the scale of the entity.
-  - Other properties for position, rotation, scale, visibility, collision, shader, material, texture, etc.
+- <span class="properties">.enabled</span>: Disables or enables the entity. Disabled entities are not visible nor run code.
+- <span class="properties">.model</span>: Sets the model of the entity.
+- <span class="properties">.color</span>: Sets the color of the entity.
+- <span class="properties">.eternal</span>: Determines if the entity is eternal and does not get destroyed on scene clear.
+- <span class="properties">.parent</span>: Sets the parent of the entity.
+- <span class="properties">.position</span>: Sets the position of the entity.
+- <span class="properties">.rotation</span>: Sets the rotation of the entity.
+- <span class="properties">.scale</span>: Sets the scale of the entity.
+- Other properties for position, rotation, scale, visibility, collision, shader, material, texture, etc.
 
 ### Functions
-  - `enable()`: Enables the entity.
-  - `disable()`: Disables the entity.
-  - `add_script(class_instance)`: Adds a script to the entity.
-  - Other functions for setting shader inputs, generating maps, animation, rotation, shaking, fading, blinking, and intersection checks.
+
+- <span class="function">enable()</span>: Enables the entity.
+- <span class="function">disable()</span>: Disables the entity.
+- <span class="function">add_script(<span class="syntax">class_instance</span>)</span>: Adds a script to the entity.
+- Other functions for setting shader inputs, generating maps, animation, rotation, shaking, fading, blinking, and intersection checks.
 
 ### Example Usage
 
@@ -243,12 +275,11 @@ player = Player(x=-1)
 
 ## Sprite Class
 
-The `Sprite` class in Ursina is a specialized entity designed for creating interactive buttons in 2D or UI space. It inherits from the `Entity` class and provides additional functionality for handling mouse input and button events.
-
+The <span class="syntax">Sprite</span> class in Ursina is a specialized entity designed for creating interactive buttons in 2D or UI space. It inherits from the <span class="syntax">Entity</span> class and provides additional functionality for handling mouse input and button events.
 
 ### Creating Sprites
 
-To create sprites in Ursina, you first need to import the `Sprite` class from the `ursina` package. Sprites are useful for 2D games and UI elements. Here's a simple example of how to import and create a sprite:
+To create sprites in Ursina, you first need to import the <span class="syntax">Sprite</span> class from the <span class="syntax">ursina</span> package. Sprites are useful for 2D games and UI elements. Here's a simple example of how to import and create a sprite:
 
 ```python
 from ursina import Sprite
@@ -270,11 +301,11 @@ button_sprite.on_click = on_click
 
 ### Properties
 
-- `ppu`: Pixels per unit for scaling the sprite.
-- `model`: The model used for rendering the sprite (default is 'quad').
-- `texture`: The texture applied to the sprite.
-- `aspect_ratio`: The aspect ratio of the sprite, calculated based on the texture dimensions.
-- `scale_x`: The horizontal scale of the sprite, calculated based on the aspect ratio and the vertical scale (scale_y).
+- <span class="properties">ppu</span>: Pixels per unit for scaling the sprite.
+- <span class="properties">model</span>: The model used for rendering the sprite (default is <span class="string">'quad'</span>).
+- <span class="properties">texture</span>: The texture applied to the sprite.
+- <span class="properties">aspect_ratio</span>: The aspect ratio of the sprite, calculated based on the texture dimensions.
+- <span class="properties">scale_x</span>: The horizontal scale of the sprite, calculated based on the aspect ratio and the vertical scale (<span class="boolean">scale_y</span>).
 
 ### Example Usage
 
@@ -307,24 +338,24 @@ app.run()
 
 ### Creating Text
 
-To create text in Ursina, you can use the `Text` class which provides a flexible way to display and format text in your application. Here's a step-by-step guide on how to create and customize text:
+To create text in Ursina, you can use the <span class="syntax">Text</span> class which provides a flexible way to display and format text in your application. Here's a step-by-step guide on how to create and customize text:
 
-1. **Import the Text Class**
-   First, ensure that you have imported the `Text` class from Ursina.
+1. <span class="properties">Import the Text Class</span>
+   First, ensure that you have imported the <span class="syntax">Text</span> class from Ursina.
 
    ```python
    from ursina import Text
    ```
 
-2. **Create an Instance of Text**
-   You can create a text entity by instantiating the `Text` class. You can specify the content of the text and various other properties at the time of creation.
+2. <span class="properties">Create an Instance of Text</span>
+   You can create a text entity by instantiating the <span class="syntax">Text</span> class. You can specify the content of the text and various other properties at the time of creation.
 
    ```python
    example_text = Text(text='Hello, Ursina!')
    ```
 
-3. **Customize Text Properties**
-   The `Text` class offers various properties to customize the appearance and behavior of the text. For example, you can set the font size, color, and alignment.
+3. <span class="properties">Customize Text Properties</span>
+   The <span class="syntax">Text</span> class offers various properties to customize the appearance and behavior of the text. For example, you can set the font size, color, and alignment.
 
    ```python
    example_text.size = 0.05
@@ -332,23 +363,23 @@ To create text in Ursina, you can use the `Text` class which provides a flexible
    example_text.x = -0.5  # Position the text on the x-axis
    ```
 
-4. **Add Text to the Scene**
+4. <span class="properties">Add Text to the Scene</span>
    Once the text is configured, it is automatically added to the scene. However, you can explicitly define its parent if needed.
 
    ```python
    example_text.parent = camera.ui
    ```
 
-5. **Using Tags for Formatting**
-   If you want to use formatted text with tags, ensure `use_tags` is set to `True` and define your tags.
+5. <span class="properties">Using Tags for Formatting</span>
+   If you want to use formatted text with tags, ensure <span class="syntax">use_tags</span> is set to <span class="boolean">True</span> and define your tags.
 
    ```python
    example_text.text = 'Hello, <red>Ursina</red>!'
    example_text.use_tags = True
    ```
 
-6. **Animating Text**
-   You can animate the text to appear using the `appear` method which makes the text appear character by character.
+6. <span class="properties">Animating Text</span>
+   You can animate the text to appear using the <span class="syntax">appear</span> method which makes the text appear character by character.
 
    ```python
    example_text.appear(speed=0.05)
@@ -356,36 +387,42 @@ To create text in Ursina, you can use the `Text` class which provides a flexible
 
 ### Parameters
 
-- **`Text(text='', start_tag=start_tag, end_tag=end_tag, ignore=True, **kwargs)`**: Initializes a text entity with optional parameters such as the text content, start and end tags for formatting, and additional keyword arguments.
+```python
+Text(text='', start_tag='<', end_tag='>', ignore=True, **kwargs)
+
+# Initializes a text entity with optional parameters such as 
+# the text content, start and end tags for formatting, and 
+# additional keyword arguments.
+```
 
 ### Properties
 
-- **`size`**: The size of the text.
-- **`parent`**: The parent entity of the text (default is `camera.ui`).
-- **`shader`**: The shader applied to the text.
-- **`text_nodes`**: List of text nodes.
-- **`images`**: List of images in the text.
-- **`origin`**: The origin point of the text.
-- **`font`**: The font used for the text.
-- **`resolution`**: The resolution of the text.
-- **`use_tags`**: If `True`, tags are used for text formatting.
-- **`line_height`**: The height of each line of text.
-- **`start_tag`**: The start tag for formatting.
-- **`end_tag`**: The end tag for formatting.
-- **`text_colors`**: Dictionary containing text colors.
-- **`tag`**: The combined start and end tag.
-- **`current_color`**: The current text color.
-- **`scale_override`**: Scale override for the text.
-- **`appear_sequence`**: Sequence for appearing text.
+- <span class="properties">size</span>: The size of the text.
+- <span class="properties">parent</span>: The parent entity of the text (default is <span class="boolean">camera.ui</span>).
+- <span class="properties">shader</span>: The shader applied to the text.
+- <span class="properties">text_nodes</span>: List of text nodes.
+- <span class="properties">images</span>: List of images in the text.
+- <span class="properties">origin</span>: The origin point of the text.
+- <span class="properties">font</span>: The font used for the text.
+- <span class="properties">resolution</span>: The resolution of the text.
+- <span class="properties">use_tags</span>: If <span class="boolean">True</span>, tags are used for text formatting.
+- <span class="properties">line_height</span>: The height of each line of text.
+- <span class="properties">start_tag</span>: The start tag for formatting.
+- <span class="properties">end_tag</span>: The end tag for formatting.
+- <span class="properties">text_colors</span>: Dictionary containing text colors.
+- <span class="properties">tag</span>: The combined start and end tag.
+- <span class="properties">current_color</span>: The current text color.
+- <span class="properties">scale_override</span>: Scale override for the text.
+- <span class="properties">appear_sequence</span>: Sequence for appearing text.
 
 ### Functions
 
-- **`text(text)`**: Sets the text content.
-- **`create_text_section(text, tag='', x=0, y=0)`**: Creates a text section with optional tag and position.
-- **`align()`**: Aligns the text.
-- **`create_background(padding=size*2, radius=size, color=ursina.color.black66)`**: Creates a background for the text.
-- **`appear(speed=.025)`**: Animates the text to appear.
-- **`get_width(string, font=None)`**: Gets the width of a string.
+- <span class="function">text</span>(<span class="syntax">text</span>): Sets the text content.
+- <span class="function">create_text_section</span>(<span class="syntax">text</span>, <span class="syntax">tag</span>=<span class="string">""</span>, <span class="syntax">x</span>=<span class="number">0</span>, <span class="syntax">y</span>=<span class="number">0</span>): Creates a text section with optional tag and position.
+- <span class="function">align</span>(): Aligns the text.
+- <span class="function">create_background</span>(<span class="syntax">padding</span>=size*<span class="number">2</span></span>, <span class="syntax">radius</span>=size, <span class="syntax">color</span>=ursina.color.black66): Creates a background for the text.
+- <span class="function">appear</span>(<span class="syntax">speed</span>=<span class="number">.025</span>): Animates the text to appear.
+- <span class="function">get_width</span>(<span class="syntax">string</span>, <span class="syntax">font</span>=<span class="boolean">None</span>): Gets the width of a string.
 
 ### Usage Example
 
@@ -416,30 +453,31 @@ To create text in Ursina, you can use the `Text` class which provides a flexible
    # Run the application
    app.run()
    ```
+
 ---
 
 ## Audio Class
 
 ### Creating Audio
 
-To import audio in Ursina, you can use the `Audio` class provided by the engine. This class allows you to manage and control audio files within your application. Here's a step-by-step guide on how to import and use audio:
+To import audio in Ursina, you can use the <span class="syntax">Audio</span> class provided by the engine. This class allows you to manage and control audio files within your application. Here's a step-by-step guide on how to import and use audio:
 
-1. **Import the Audio Class**
-   First, ensure that you have imported the `Audio` class from Ursina.
+1. <span class="properties">Import the Audio Class</span>
+   First, ensure that you have imported the <span class="syntax">Audio</span> class from Ursina.
 
    ```python
    from ursina import Audio
    ```
 
-2. **Create an Instance of Audio**
-   You can create an audio object by instantiating the `Audio` class. You need to specify the path to your audio file. Optionally, you can set other parameters like volume, pitch, and loop.
+2. <span class="properties">Create an Instance of Audio</span>
+   You can create an audio object by instantiating the <span class="syntax">Audio</span> class. You need to specify the path to your audio file. Optionally, you can set other parameters like volume, pitch, and loop.
 
    ```python
    background_music = Audio('path_to_music.mp3', loop=True, autoplay=True)
    ```
 
-3. **Control Audio Playback**
-   After creating an audio object, you can control its playback using methods like `play()`, `pause()`, and `stop()`.
+3. <span class="properties">Control Audio Playback</span>
+   After creating an audio object, you can control its playback using methods like <span class="syntax">play()</span>, <span class="syntax">pause()</span>, and <span class="syntax">stop()</span>.
 
    ```python
    background_music.play()
@@ -447,7 +485,7 @@ To import audio in Ursina, you can use the `Audio` class provided by the engine.
    background_music.stop()
    ```
 
-4. **Adjust Audio Properties**
+4. <span class="properties">Adjust Audio Properties</span>
    You can adjust properties such as volume and pitch at runtime.
 
    ```python
@@ -457,34 +495,42 @@ To import audio in Ursina, you can use the `Audio` class provided by the engine.
 
 This setup allows you to integrate and control audio within your Ursina applications effectively.
 
-
 ### Parameters
 
-- **`Audio(sound_file_name='', volume=1, pitch=1, balance=0, loop=False, loops=1, autoplay=True, auto_destroy=False, **kwargs)`**: Initializes an audio entity with optional parameters such as the sound file name, volume, pitch, balance, loop settings, autoplay, auto_destroy, and additional keyword arguments.
+```python
+Audio(sound_file_name='', volume=1, pitch=1, balance=0, 
+   loop=False, loops=1, autoplay=True, auto_destroy=False, 
+   **kwargs
+)
+
+# Initializes an audio entity with optional parameters such as
+# the sound file name, volume, pitch, balance, loop settings,
+# autoplay, auto_destroy, and additional keyword arguments.
+```
 
 ### Properties
 
-- **`volume`**: The volume of the audio.
-- **`pitch`**: The pitch of the audio.
-- **`loop`**: If `True`, the audio will loop.
-- **`loops`**: The number of times the audio will loop.
-- **`clip`**: The sound file name.
-- **`length`**: The duration of the audio clip.
-- **`status`**: The status of the audio (playing, paused, stopped).
-- **`ready`**: If `True`, the audio is ready to play.
-- **`playing`**: If `True`, the audio is currently playing.
-- **`time`**: The current time position of the audio.
-- **`balance`**: The balance of the audio (panning). Should be a value between -0.5 and 0.5.
+- <span class="properties">volume</span>: The volume of the audio.
+- <span class="properties">pitch</span>: The pitch of the audio.
+- <span class="properties">loop</span>: If <span class="boolean">True</span>, the audio will loop.
+- <span class="properties">loops</span>: The number of times the audio will loop.
+- <span class="properties">clip</span>: The sound file name.
+- <span class="properties">length</span>: The duration of the audio clip.
+- <span class="properties">status</span>: The status of the audio (<span class="boolean">playing</span>, <span class="boolean">paused</span>, <span class="boolean">stopped</span>).
+- <span class="properties">ready</span>: If <span class="boolean">True</span>, the audio is ready to play.
+- <span class="properties">playing</span>: If <span class="boolean">True</span>, the audio is currently playing.
+- <span class="properties">time</span>: The current time position of the audio.
+- <span class="properties">balance</span>: The balance of the audio (<span class="boolean">panning</span>). Should be a value between <span class="number">-0.5</span> and <span class="number">0.5</span>.
 
 ### Functions
 
-- **`play(start=0)`**: Plays the audio from the specified start time.
-- **`pause()`**: Pauses the audio.
-- **`resume()`**: Resumes the audio from the paused state.
-- **`stop(destroy=True)`**: Stops the audio. If `destroy` is `True`, the audio entity is destroyed.
-- **`fade(value, duration=.5, delay=0, curve=curve.in_expo, resolution=None, interrupt=True)`**: Fades the volume of the audio to the specified value over a duration.
-- **`fade_in(value=1, duration=.5, delay=0, curve=curve.in_expo, resolution=None, interrupt='finish')`**: Fades in the volume of the audio.
-- **`fade_out(value=0, duration=.5, delay=0, curve=curve.in_expo, resolution=None, interrupt='finish')`**: Fades out the volume of the audio.
+- <span class="function">play</span>(<span class="syntax">start</span>=<span class="number">0</span>): Plays the audio from the specified start time.
+- <span class="function">pause</span>()</span>: Pauses the audio.
+- <span class="function">resume</span>()</span>: Resumes the audio from the paused state.
+- <span class="function">stop</span>(<span class="syntax">destroy</span>=<span class="boolean">True</span>)</span>: Stops the audio. If <span class="syntax">destroy</span> is <span class="boolean">True</span>, the audio entity is destroyed.
+- <span class="function">fade</span>(<span class="syntax">value</span>, <span class="syntax">duration</span>=<span class="number">.5</span>, <span class="syntax">delay</span>=<span class="number">0</span>, <span class="syntax">curve</span>=curve.in_expo, <span class="syntax">resolution</span>=<span class="boolean">None</span>, <span class="syntax">interrupt</span>=<span class="boolean">True</span>): Fades the volume of the audio to the specified value over a duration.
+- <span class="function">fade_in</span>(<span class="sytnax">value</span>=<span class="number">1</span>, <span class="syntax">duration</span>=<span class="number">.5</span>, <span class="syntax">delay</span>=<span class="number">0</span>, <span class="syntax">curve</span>=curve.in_expo, <span class="syntax">resolution</span>=<span class="boolean">None</span>, <span class="syntax">interrupt</span>=<span class="string">'finish'</span>): Fades in the volume of the audio.
+- <span class="function">fade_out</span>(<span class="syntax">value</span>=<span class="number">0</span>, <span class="syntax">duration</span>=<span class="number">.5</span>, <span class="syntax">delay</span>=<span class="number">0</span>, <span class="syntax">curve</span>=curve.in_expo, <span class="syntax">resolution</span>=<span class="boolean">None</span>, <span class="syntax">interrupt</span>=<span class="string">'finish'</span>): Fades out the volume of the audio.
 
 ### Usage Example
 
@@ -512,3 +558,40 @@ def input(key):
 # Run the application
 app.run()
 ```
+
+<style>
+    .parameters {
+        color: rgb(130,170,255);
+        font-weight: 600;
+    }
+
+    .properties {
+        color: rgb(127,219,196);
+        font-weight: 600;
+    }
+
+    .boolean {
+        color: rgb(255,88,116);
+        font-weight: 550;
+    }
+
+    .function {
+        color: rgb(178,204,214);
+        font-weight: 600;
+    }
+
+    .syntax {
+      color: rgb(130,170,255);
+    }
+
+    .number {
+      color: rgb(245,140,108);
+      font-weight: 550;
+    }
+
+    .string {
+      color: rgb(255,203,107);
+      font-weight: 550;
+    }
+
+</style>

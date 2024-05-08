@@ -6,33 +6,33 @@ sidebar:
 
 ## Camera
 
-The camera in Ursina allows you to control the view and perspective of your scene. Below are the attributes and functions associated with the camera.
+The <span class="entity">camera</span> in Ursina allows you to control the view and perspective of your scene. Below are the attributes and functions associated with the camera.
 
 ### Attributes
 
-- `.parent`: The parent entity of the camera, typically set to `scene`.
-- `.name`: The name of the camera.
-- `.eternal`: Boolean indicating whether the camera is eternal (persists across scenes).
-- `.ui_size`: The size of the UI.
-- `.perspective_lens_node`: Node for the perspective lens.
-- `.orthographic_lens_node`: Node for the orthographic lens.
-- `.ui`: Entity for UI elements.
-- `.overlay`: Entity for overlay elements.
+- <span class="properties">.parent</span>: The parent entity of the camera, typically set to <span class="syntax">scene</span>.
+- <span class="properties">.name</span>: The name of the camera.
+- <span class="properties">.eternal</span>: Boolean indicating whether the camera is eternal (persists across scenes).
+- <span class="properties">.ui_size</span>: The size of the UI.
+- <span class="properties">.perspective_lens_node</span>: Node for the perspective lens.
+- <span class="properties">.orthographic_lens_node</span>: Node for the orthographic lens.
+- <span class="properties">.ui</span>: Entity for UI elements.
+- <span class="properties">.overlay</span>: Entity for overlay elements.
 
 ### Functions
 
-- `set_up()`: Sets up the camera.
-- `orthographic_getter()`: Getter function for orthographic mode.
-- `orthographic_setter(value)`: Setter function for orthographic mode.
-- `fov_getter()`: Getter function for field of view (FOV).
-- `fov_setter(value)`: Setter function for field of view (FOV).
-- `clip_plane_near_getter()`: Getter function for the near clipping plane.
-- `clip_plane_near_setter(value)`: Setter function for the near clipping plane.
-- `clip_plane_far_getter()`: Getter function for the far clipping plane.
-- `clip_plane_far_setter(value)`: Setter function for the far clipping plane.
-- `aspect_ratio_getter()`: Getter function for the aspect ratio.
-- `shader_setter(value)`: Setter function for the shader.
-- `set_shader_input(name, value)`: Sets input for the shader.
+- <span class="function">set_up()</span>: Sets up the camera.
+- <span class="function">orthographic_getter()</span>: Getter function for orthographic mode.
+- <span class="function">orthographic_setter(value)</span>: Setter function for orthographic mode.
+- <span class="function">fov_getter()</span>: Getter function for field of view (FOV).
+- <span class="function">fov_setter(value)</span>: Setter function for field of view (FOV).
+- <span class="function">clip_plane_near_getter()</span>: Getter function for the near clipping plane.
+- <span class="function">clip_plane_near_setter(value)</span>: Setter function for the near clipping plane.
+- <span class="function">clip_plane_far_getter()</span>: Getter function for the far clipping plane.
+- <span class="function">clip_plane_far_setter(value)</span>: Setter function for the far clipping plane.
+- <span class="function">aspect_ratio_getter()</span>: Getter function for the aspect ratio.
+- <span class="function">shader_setter(value)</span>: Setter function for the shader.
+- <span class="function">set_shader_input(name, value)</span>: Sets input for the shader.
 
 ### Example
 
@@ -59,49 +59,46 @@ app.run()
 ---
 
 ## Mouse
-
-The mouse in Ursina provides functionalities for tracking mouse movements, clicks, and interactions with entities in the scene.
+The <span class="entity">mouse</span> in Ursina provides functionalities for tracking mouse movements, clicks, and interactions with entities in the scene.
 
 ### Attributes
 
-- `.enabled`: Boolean indicating whether the mouse is enabled.
-- `.visible`: Boolean indicating whether the mouse cursor is visible.
-- `.locked`: Boolean indicating whether the mouse cursor is locked.
-- `.position`: The position of the mouse cursor in 3D space.
-- `.delta`: The movement of the mouse since a mouse button was pressed.
-- `.prev_x`, `.prev_y`: Previous x and y positions of the mouse cursor.
-- `.start_x`, `.start_y`: Initial x and y positions of the mouse cursor.
-- `.velocity`: Velocity of the mouse cursor.
-- `.moving`: Boolean indicating whether the mouse cursor is moving.
-- `.prev_click_time`: Time of the previous mouse click.
-- `.prev_click_pos`: Previous position of the mouse click.
-- `.double_click_distance`: Distance threshold for double-click detection.
-- `.double_click_movement_limit`: Movement limit for double-click detection.
-- `.hovered_entity`: The closest hovered entity with a collider.
-- `.left`, `.right`, `.middle`: Booleans indicating whether the left, right, or middle mouse button is pressed.
-- `.delta_drag`: Movement between left mouse down and left mouse up.
-- `.update_step`: Update step for the mouse.
-- `.traverse_target`: Target for collision traversal.
-- `.raycast`: Boolean indicating whether raycasting is enabled.
-- `.collision`: Collision information for the mouse.
-- `.collisions`: List of collisions.
-- `.enabled`: Boolean indicating whether the mouse is enabled.
+- <span class="properties">.enabled</span>: Boolean indicating whether the mouse is enabled.
+- <span class="properties">.visible</span>: Boolean indicating whether the mouse cursor is visible.
+- <span class="properties">.locked</span>: Boolean indicating whether the mouse cursor is locked.
+- <span class="properties">.position</span>: The position of the mouse cursor in 3D space.
+- <span class="properties">.delta</span>: The movement of the mouse since a mouse button was pressed.
+- <span class="properties">.prev_x</span>, <span class="properties">.prev_y</span>: Previous x and y positions of the mouse cursor.
+- <span class="properties">.start_x</span>, <span class="properties">.start_y</span>: Initial x and y positions of the mouse cursor.
+- <span class="properties">.velocity</span>: Velocity of the mouse cursor.
+- <span class="properties">.moving</span>: Boolean indicating whether the mouse cursor is moving.
+- <span class="properties">.prev_click_time</span>: Time of the previous mouse click.
+- <span class="properties">.prev_click_pos</span>: Previous position of the mouse click.
+- <span class="properties">.double_click_distance</span>: Distance threshold for double-click detection.
+- <span class="properties">.double_click_movement_limit</span>: Movement limit for double-click detection.
+- <span class="properties">.hovered_entity</span>: The closest hovered entity with a collider.
+- <span class="properties">.left</span>, <span class="properties">.right</span>, <span class="properties">.middle</span>: Booleans indicating whether the left, right, or middle mouse button is pressed.
+- <span class="properties">.delta_drag</span>: Movement between left mouse down and left mouse up.
+- <span class="properties">.update_step</span>: Update step for the mouse.
+- <span class="properties">.traverse_target</span>: Target for collision traversal.
+- <span class="properties">.raycast</span>: Boolean indicating whether raycasting is enabled.
+- <span class="properties">.collision</span>: Collision information for the mouse.
+- <span class="properties">.collisions</span>: List of collisions.
 
 ### Functions
-
-- `x()`, `y()`: Get the x and y positions of the mouse cursor.
-- `position()`: Get the position of the mouse cursor.
-- `locked()`: Get or set the locked state of the mouse cursor.
-- `visible()`: Get or set the visibility of the mouse cursor.
-- `input(key)`: Handle input events for the mouse.
-- `update()`: Update the mouse state.
-- `normal()`: Get the normal of the polygon, in local space.
-- `world_normal()`: Get the normal of the polygon, in world space.
-- `point()`: Get the point hit, in local space.
-- `world_point()`: Get the point hit, in world space.
-- `is_outside()`: Check if the mouse cursor is outside the screen.
-- `find_collision()`: Find collisions with the mouse cursor.
-- `unhover_everything_not_hit()`: Unhover entities that are not hit by the mouse cursor.
+- <span class="function">x()</span>, <span class="function">y()</span>: Get the x and y positions of the mouse cursor.
+- <span class="function">position()</span>: Get the position of the mouse cursor.
+- <span class="function">locked()</span>: Get or set the locked state of the mouse cursor.
+- <span class="function">visible()</span>: Get or set the visibility of the mouse cursor.
+- <span class="function">input(key)</span>: Handle input events for the mouse.
+- <span class="function">update()</span>: Update the mouse state.
+- <span class="function">normal()</span>: Get the normal of the polygon, in local space.
+- <span class="function">world_normal()</span>: Get the normal of the polygon, in world space.
+- <span class="function">point()</span>: Get the point hit, in local space.
+- <span class="function">world_point()</span>: Get the point hit, in world space.
+- <span class="function">is_outside()</span>: Check if the mouse cursor is outside the screen.
+- <span class="function">find_collision()</span>: Find collisions with the mouse cursor.
+- <span class="function">unhover_everything_not_hit()</span>: Unhover entities that are not hit by the mouse cursor.
 
 ### Example
 
@@ -125,47 +122,46 @@ app.run()
 
 ## Window
 
-The `Window` class in Ursina provides functionalities for managing the application window's properties and behavior.
+The <span class="entity">Window</span> class in Ursina provides functionalities for managing the application window's properties and behavior.
 
 ### Attributes
 
-- `.title`: Title of the application window.
-- `.icon`: Icon for the application window.
-- `.monitors`: List of available monitors.
-- `.main_monitor`: The main monitor.
-- `.monitor_index`: Index of the monitor.
-- `.windowed_position`: Position of the window when in windowed mode.
-- `.show_ursina_splash`: Boolean indicating whether to display the Ursina splash screen.
-- `.top`, `.bottom`, `.center`: Predefined screen positions.
-- `.forced_aspect_ratio`: Forced aspect ratio for the window.
-- `.always_on_top`: Boolean indicating whether the window is always on top.
-- `.vsync`: Vertical sync setting.
-- `.color`: Color of the window.
-- `.render_modes`: Available render modes.
-- `.render_mode`: Current render mode.
-- `.editor_ui`: UI for the editor.
-- `.position`: Position of the window.
-- `.exit_button`: Button to exit the application.
-- `.fps_counter`: Text displaying the current FPS.
-- `.entity_counter`: Text displaying the number of entities.
-- `.collider_counter`: Text displaying the number of colliders.
-- `.cog_menu`: Button list for the cog menu.
-- `.cog_button`: Button for the cog menu.
-- `.prev_size`: Previous size of the window.
-- `.size`: Size of the window.
+- <span class="properties">.title</span>: Title of the application window.
+- <span class="properties">.icon</span>: Icon for the application window.
+- <span class="properties">.monitors</span>: List of available monitors.
+- <span class="properties">.main_monitor</span>: The main monitor.
+- <span class="properties">.monitor_index</span>: Index of the monitor.
+- <span class="properties">.windowed_position</span>: Position of the window when in windowed mode.
+- <span class="properties">.show_ursina_splash</span>: Boolean indicating whether to display the Ursina splash screen.
+- <span class="properties">.top</span>, <span class="properties">.bottom</span>, <span class="properties">.center</span>: Predefined screen positions.
+- <span class="properties">.forced_aspect_ratio</span>: Forced aspect ratio for the window.
+- <span class="properties">.always_on_top</span>: Boolean indicating whether the window is always on top.
+- <span class="properties">.vsync</span>: Vertical sync setting.
+- <span class="properties">.color</span>: Color of the window.
+- <span class="properties">.render_modes</span>: Available render modes.
+- <span class="properties">.render_mode</span>: Current render mode.
+- <span class="properties">.editor_ui</span>: UI for the editor.
+- <span class="properties">.position</span>: Position of the window.
+- <span class="properties">.exit_button</span>: Button to exit the application.
+- <span class="properties">.fps_counter</span>: Text displaying the current FPS.
+- <span class="properties">.entity_counter</span>: Text displaying the number of entities.
+- <span class="properties">.collider_counter</span>: Text displaying the number of colliders.
+- <span class="properties">.cog_menu</span>: Button list for the cog menu.
+- <span class="properties">.cog_button</span>: Button for the cog menu.
+- <span class="properties">.prev_size</span>: Previous size of the window.
+- <span class="properties">.size</span>: Size of the window.
 
 ### Functions
 
-- `ready()`: Initialize the window with specified settings.
-- `apply_settings()`: Apply the specified settings to the window.
-- `left()`, `right()`, `top_left()`, `top_right()`, `bottom_left()`, `bottom_right()`, `center_on_screen()`: Set the window position.
-- `make_editor_gui()`: Create the editor GUI.
-- `window_input(key)`: Handle input events for the window.
-- `update_aspect_ratio()`: Update the aspect ratio of the window.
-- `position()`, `size()`, `aspect_ratio()`, `forced_aspect_ratio()`, `render_mode()`, `title()`, `icon()`, `borderless()`, `fullscreen()`, `color()`, `vsync()`: Get or set window properties.
+- <span class="function">ready()</span>: Initialize the window with specified settings.
+- <span class="function">apply_settings()</span>: Apply the specified settings to the window.
+- <span class="function">left()</span>, <span class="function">right()</span>, <span class="function">top_left()</span>, <span class="function">top_right()</span>, <span class="function">bottom_left()</span>, <span class="function">bottom_right()</span>, <span class="function">center_on_screen()</span>: Set the window position.
+- <span class="function">make_editor_gui()</span>: Create the editor GUI.
+- <span class="function">window_input(key)</span>: Handle input events for the window.
+- <span class="function">update_aspect_ratio()</span>: Update the aspect ratio of the window.
+- <span class="function">position()</span>, <span class="function">size()</span>, <span class="function">aspect_ratio()</span>, <span class="function">forced_aspect_ratio()</span>, <span class="function">render_mode()</span>, <span class="function">title()</span>, <span class="function">icon()</span>, <span class="function">borderless()</span>, <span class="function">fullscreen()</span>, <span class="function">color()</span>, <span class="function">vsync()</span>: Get or set window properties.
 
 ### Example
-
 ```python
 from ursina import *
 
@@ -212,36 +208,35 @@ app.run()
 
 ## Application
 
-The `Application` class in Ursina provides functionalities for managing the application's state and behavior.
+The <span class="entity">Application</span> class in Ursina provides functionalities for managing the application's state and behavior.
 
 ### Attributes
 
-- `.paused`: Boolean indicating whether the application is paused.
-- `.time_scale`: Time scale factor for the application.
-- `.calculate_dt`: Boolean indicating whether to calculate delta time.
-- `.sequences`: List of sequences.
-- `.trace_entity_definition`: Boolean enabling the setting of entity line definition.
-- `.package_folder`: Path to the package folder.
-- `.blender_paths`: Dictionary of Blender paths.
-- `.development_mode`: Boolean indicating whether the application is in development mode.
-- `.window_type`: Type of the window ('onscreen', 'fullscreen', etc.).
-- `.show_ursina_splash`: Boolean indicating whether to display the Ursina splash screen.
-- `.ursina_splash`: Path to the Ursina splash screen.
-- `.gltf_no_srgb`: Boolean indicating whether to use GLTF without sRGB.
-- `.scenes_folder`: Path to the scenes folder.
-- `.scripts_folder`: Path to the scripts folder.
-- `.fonts_folder`: Path to the fonts folder.
-- `.compressed_textures_folder`: Path to the compressed textures folder.
-- `.compressed_models_folder`: Path to the compressed models folder.
-- `.base`: Base instance (will be set once the Ursina() is created).
-- `.hot_reloader`: Hot reloader instance (will be set by main if development mode).
+- <span class="properties">.paused</span>: Boolean indicating whether the application is paused.
+- <span class="properties">.time_scale</span>: Time scale factor for the application.
+- <span class="properties">.calculate_dt</span>: Boolean indicating whether to calculate delta time.
+- <span class="properties">.sequences</span>: List of sequences.
+- <span class="properties">.trace_entity_definition</span>: Boolean enabling the setting of entity line definition.
+- <span class="properties">.package_folder</span>: Path to the package folder.
+- <span class="properties">.blender_paths</span>: Dictionary of Blender paths.
+- <span class="properties">.development_mode</span>: Boolean indicating whether the application is in development mode.
+- <span class="properties">.window_type</span>: Type of the window ('onscreen', 'fullscreen', etc.).
+- <span class="properties">.show_ursina_splash</span>: Boolean indicating whether to display the Ursina splash screen.
+- <span class="properties">.ursina_splash</span>: Path to the Ursina splash screen.
+- <span class="properties">.gltf_no_srgb</span>: Boolean indicating whether to use GLTF without sRGB.
+- <span class="properties">.scenes_folder</span>: Path to the scenes folder.
+- <span class="properties">.scripts_folder</span>: Path to the scripts folder.
+- <span class="properties">.fonts_folder</span>: Path to the fonts folder.
+- <span class="properties">.compressed_textures_folder</span>: Path to the compressed textures folder.
+- <span class="properties">.compressed_models_folder</span>: Path to the compressed models folder.
+- <span class="properties">.base</span>: Base instance (will be set once the Ursina() is created).
+- <span class="properties">.hot_reloader</span>: Hot reloader instance (will be set by main if development mode).
 
 ### Functions
-
-- `pause()`: Pause the application.
-- `resume()`: Resume the application.
-- `quit()`: Quit the application.
-- `load_settings(path)`: Load settings from the specified path.
+- <span class="function">pause()</span>: Pause the application.
+- <span class="function">resume()</span>: Resume the application.
+- <span class="function">quit()</span>: Quit the application.
+- <span class="function">load_settings(path)</span>: Load settings from the specified path.
 
 ### Example
 
@@ -286,26 +281,22 @@ if __name__ == '__main__':
 
 ## Scene
 
-The `Scene` class in Ursina provides functionalities for managing the entities and collidables in the scene.
+The <span class="entity">Scene</span> class in Ursina provides functionalities for managing the entities and collidables in the scene.
 
 ### Attributes
-
-- `.entities`: List of entities in the scene.
-- `.collidables`: Set of collidable entities in the scene.
-
+- <span class="properties">.entities</span>: List of entities in the scene.
+- <span class="properties">.collidables</span>: Set of collidable entities in the scene.
 ### Functions
-
-- `set_up()`: Set up the scene.
-- `clear()`: Clear the scene.
-- `fog_color()`: Get the fog color.
-- `fog_color(value)`: Set the fog color.
-- `fog_density()`: Get the fog density.
-- `fog_density(value)`: Set the fog density.
-- `children()`: Get the children of the scene.
-- `children(value)`: Set the children of the scene.
+- <span class="function">set_up()</span>: Set up the scene.
+- <span class="function">clear()</span>: Clear the scene.
+- <span class="function">fog_color()</span>: Get the fog color.
+- <span class="function">fog_color(value)</span>: Set the fog color.
+- <span class="function">fog_density()</span>: Get the fog density.
+- <span class="function">fog_density(value)</span>: Set the fog density.
+- <span class="function">children()</span>: Get the children of the scene.
+- <span class="function">children(value)</span>: Set the children of the scene.
 
 ### Example
-
 ```python
 from ursina import *
 

@@ -48,7 +48,7 @@ Ursina(title='ursina', icon='textures/ursina.ico', borderless=True,
 
 ### Properties
 
-- <span class="properties">mouse</span>: The <span class="syntax">mouse</span> object provides access to mouse input functionalities, allowing interaction with the application.
+- <span class="properties">.mouse</span>: The <span class="syntax">mouse</span> object provides access to mouse input functionalities, allowing interaction with the application.
 
 ### Functions
 
@@ -73,6 +73,99 @@ def input(key):
 
 # Run the application
 app.run()
+```
+
+---
+
+## Entity
+
+The <span class="entity">Entity</span> class in Ursina represents objects in the game world. It provides properties and functions for managing various aspects of entities.
+
+### Attributes
+
+- <span class="parameters">.rotation_directions</span>: Tuple representing the direction of rotation along the x, y, and z axes.
+- <span class="parameters">.name</span>: Name of the entity.
+- <span class="parameters">.ignore</span>: If <span class="boolean">True</span>, the entity will not try to run code.
+- <span class="parameters">.ignore_paused</span>: If <span class="boolean">True</span>, the entity will still run when the application is paused.
+- <span class="parameters">.ignore_input</span>: If <span class="boolean">True</span>, the entity will ignore input.
+- <span class="parameters">.parent</span>: Parent entity of the current entity.
+- <span class="parameters">.add_to_scene_entities</span>: If <span class="boolean">True</span>, the entity will be added to the scene entities.
+- <span class="parameters">.scripts</span>: List of scripts attached to the entity.
+- <span class="parameters">.animations</span>: List of animations applied to the entity.
+- <span class="parameters">.hovered</span>: If <span class="boolean">True</span>, the mouse is hovering over the entity.
+- <span class="parameters">.enabled</span>: If <span class="boolean">True</span>, the entity is enabled.
+
+### Properties
+
+- <span class="properties">.enabled</span>: Disabled entities will not be visible nor run code.
+- <span class="properties">.model</span>: Model of the entity.
+- <span class="properties">.color</span>: Color of the entity.
+- <span class="properties">.eternal</span>: If <span class="boolean">True</span>, the entity does not get destroyed on scene.clear().
+- <span class="properties">.double_sided</span>: If <span class="boolean">True</span>, the entity is double-sided.
+- <span class="properties">.render_queue</span>: Render queue for custom sorting.
+- <span class="properties">.parent</span>: Parent entity of the entity.
+- <span class="properties">.world_parent</span>: Parent entity of the entity in world space.
+- <span class="properties">.types</span>: List of class names including inherited ones.
+- <span class="properties">.visible</span>: If <span class="boolean">True</span>, the entity is visible.
+- <span class="properties">.collider</span>: Collider type of the entity.
+- <span class="properties">.collision</span>: If <span class="boolean">True</span>, collision is enabled.
+- <span class="properties">.on_click</span>: Function to execute on click event.
+- <span class="properties">.origin</span>: Origin of the entity.
+- <span class="properties">.position</span>: Position of the entity.
+- <span class="properties">.rotation</span>: Rotation of the entity.
+- <span class="properties">.quaternion</span>: Quaternion rotation of the entity.
+- <span class="properties">.scale</span>: Scale of the entity.
+- <span class="properties">.transform</span>: Get/set position, rotation, and scale of the entity.
+- <span class="properties">.forward</span>, <span class="properties">.back</span>, <span class="properties">.right</span>, <span class="properties">.left</span>, <span class="properties">.up</span>, <span class="properties">.down</span>: Direction vectors.
+- <span class="properties">.screen_position</span>: Screen position of the entity.
+- <span class="properties">.shader</span>: Shader of the entity.
+- <span class="properties">.texture</span>: Texture of the entity.
+- <span class="properties">.alpha</span>: Transparency/opacity of the entity.
+- <span class="properties">.always_on_top</span>: If <span class="boolean">True</span>, the entity is always on top.
+- <span class="properties">.unlit</span>: If <span class="boolean">True</span>, the entity is unlit.
+- <span class="properties">.billboard</span>: If <span class="boolean">True</span>, the entity is billboard.
+- <span class="properties">.wireframe</span>: If <span class="boolean">True</span>, render the entity as wireframe.
+- <span class="properties">.attributes</span>: Attribute names of the entity.
+
+### Functions
+
+- <span class="function">.enable()</span>: Enable the entity.
+- <span class="function">.disable()</span>: Disable the entity.
+- <span class="function">.get_shader_input(name)</span>: Get the shader input value.
+- <span class="function">.set_shader_input(name, value)</span>: Set the shader input value.
+- <span class="function">.look_at(target)</span>: Rotate the entity to look at the target.
+- <span class="function">.shake(duration, magnitude, speed, direction)</span>: Shake the entity.
+- <span class="function">.intersects(traverse_target)</span>: Check if the entity intersects with another entity.
+
+### Example
+
+```python
+from ursina import *
+
+app = Ursina()
+
+e = Entity(model='quad', color=color.orange, position=(0,0,1), scale=1.5, rotation=(0,0,45), texture='brick')
+
+'''Example of inheriting Entity'''
+class Player(Entity):
+    def __init__(self, **kwargs):
+        super().__init__()
+        self.model='cube'
+        self.color = color.red
+        self.scale_y = 2
+
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def input(self, key):
+        if key == 'space':
+            self.animate_x(2, duration=1)
+
+    def update(self):
+        self.x += held_keys['d'] * time.dt * 10
+        self.x -= held_keys['a'] * time.dt * 10
+
+player = Player(x=-1)
 ```
 
 ---
@@ -152,121 +245,6 @@ b.on_click = on_click  # Assign a function to the button's click event
 
 # Run the application
 app.run()
-```
-
----
-
-## Entity Class
-
-The <span class="syntax">Entity</span> class in Ursina represents a game object or entity within the game world. It provides various properties and functions for manipulating and interacting with entities.
-
-### Creating Entities
-
-To generate entities in your Ursina game, you can use the <span class="syntax">Entity</span> class. This class allows you to create versatile game objects with customizable properties and behaviors. Below is a step-by-step guide on how to generate entities:
-
-1. <span class="properties">Import the Entity Class</span>: Ensure you have the Entity class available by importing it from Ursina.
-
-   ```python
-   from ursina import Entity
-   ```
-
-2. <span class="properties">Create an Instance of Entity</span>: You can create an entity by instantiating the <span class="syntax">Entity</span> class. You can specify various parameters such as <span class="syntax">model</span>, <span class="syntax">color</span>, <span class="syntax">position</span>, etc.
-
-   ```python
-   entity = Entity(model='cube', color=color.white, position=(0,0,0))
-   ```
-
-3. <span class="properties">Customize the Entity</span>: After creating an entity, you can further customize it by setting its properties. For example, you can change its scale, rotation, or add a texture.
-
-   ```python
-   entity.scale = (2, 2, 2)
-   entity.rotation_y = 45
-   entity.texture = 'brick'
-   ```
-
-4. <span class="properties">Add Functionality</span>: Entities can have behaviors defined by attaching scripts or using built-in methods. For example, you can make an entity rotate continuously.
-
-   ```python
-   def update():
-       entity.rotation_y += 1
-   ```
-
-5. <span class="properties">Organize Entities</span>: You can organize entities by setting parents or grouping them into scenes.
-
-   ```python
-   another_entity = Entity(parent=entity)
-   ```
-
-6. <span class="properties">Interact with Entities</span>: Entities can interact with user inputs or other game elements. Define functions to handle these interactions.
-
-   ```python
-   def input(key):
-       if key == 'space':
-           entity.enabled = not entity.enabled  # Toggle entity visibility
-   ```
-
-### Parameters
-
-```python
-Enity(add_to_scene_entities=True, enabled=True, **kwargs)
-
-# Initializes an entity with customizable options and attributes.
-```
-
-- <span class="parameters">add_to_scene_entities</span>: Boolean indicating whether to add the entity to the scene entities.
-- <span class="parameters">enabled</span>: Boolean indicating whether the entity is initially enabled.
-- <span class="parameters">**kwargs</span>: Additional keyword arguments for customization.
-
-### Properties
-
-- <span class="properties">.enabled</span>: Disables or enables the entity. Disabled entities are not visible nor run code.
-- <span class="properties">.model</span>: Sets the model of the entity.
-- <span class="properties">.color</span>: Sets the color of the entity.
-- <span class="properties">.eternal</span>: Determines if the entity is eternal and does not get destroyed on scene clear.
-- <span class="properties">.parent</span>: Sets the parent of the entity.
-- <span class="properties">.position</span>: Sets the position of the entity.
-- <span class="properties">.rotation</span>: Sets the rotation of the entity.
-- <span class="properties">.scale</span>: Sets the scale of the entity.
-- Other properties for position, rotation, scale, visibility, collision, shader, material, texture, etc.
-
-### Functions
-
-- <span class="function">enable()</span>: Enables the entity.
-- <span class="function">disable()</span>: Disables the entity.
-- <span class="function">add_script(<span class="syntax">class_instance</span>)</span>: Adds a script to the entity.
-- Other functions for setting shader inputs, generating maps, animation, rotation, shaking, fading, blinking, and intersection checks.
-
-### Example
-
-```python
-from ursina import *
-
-app = Ursina()
-
-# Create an entity
-e = Entity(model='quad', color=color.orange, position=(0, 0, 1), scale=1.5, rotation=(0, 0, 45), texture='brick')
-
-# Example of inheriting Entity
-class Player(Entity):
-    def __init__(self, **kwargs):
-        super().__init__()
-        self.model = 'cube'
-        self.color = color.red
-        self.scale_y = 2
-
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-    def input(self, key):
-        if key == 'space':
-            self.animate_x(2, duration=1)
-
-    def update(self):
-        self.x += held_keys['d'] * time.dt * 10
-        self.x -= held_keys['a'] * time.dt * 10
-
-# Create a player entity
-player = Player(x=-1)
 ```
 
 ---

@@ -1,0 +1,33 @@
+.parameters {
+    color: rgb(130,170,255);
+    font-weight: 600;
+}
+
+.properties {
+    color: rgb(127,219,196);
+    font-weight: 600;
+}
+
+.boolean {
+    color: rgb(255,88,116);
+    font-weight: 550;
+}
+
+.function {
+    color: rgb(178,204,214);
+    font-weight: 600;
+}
+
+.syntax {
+  color: rgb(130,170,255);
+}
+
+.number {
+  color: rgb(245,140,108);
+  font-weight: 550;
+}
+
+.string {
+  color: rgb(255,203,107);
+  font-weight: 550;
+}

@@ -59,7 +59,7 @@ Ursina(title='ursina', icon='textures/ursina.ico', borderless=True,
 - <span class="function">step</span>(): Allows manual control of the update loop.
 - <span class="function">run</span>(info=<span class="boolean">True</span>): Starts the Ursina application.
 
-### **Main Import Example**
+### Example
 
 ```python
 from ursina import *
@@ -133,7 +133,7 @@ Button(text='', parent=camera.ui, model='quad', radius=.25,
 - <span class="function">on_mouse_exit</span>(): Called when the mouse exits the button.
 - <span class="function">fit_to_text</span>(<span class="syntax">radius</span>=<span class="number">.1</span>, <span class="syntax">padding</span>=<span class="function">Vec2</span>(Text.size*<span class="number">1.5</span>, Text.size)): Resizes the button to fit its text content.
 
-### Example Usage
+### Example
 
 ```python
 from ursina import *
@@ -236,7 +236,7 @@ Enity(add_to_scene_entities=True, enabled=True, **kwargs)
 - <span class="function">add_script(<span class="syntax">class_instance</span>)</span>: Adds a script to the entity.
 - Other functions for setting shader inputs, generating maps, animation, rotation, shaking, fading, blinking, and intersection checks.
 
-### Example Usage
+### Example
 
 ```python
 from ursina import *
@@ -305,7 +305,7 @@ button_sprite.on_click = on_click
 - <span class="properties">aspect_ratio</span>: The aspect ratio of the sprite, calculated based on the texture dimensions.
 - <span class="properties">scale_x</span>: The horizontal scale of the sprite, calculated based on the aspect ratio and the vertical scale (<span class="boolean">scale_y</span>).
 
-### Example Usage
+### Example
 
 ```python
 from ursina import *
@@ -422,7 +422,7 @@ Text(text='', start_tag='<', end_tag='>', ignore=True, **kwargs)
 - <span class="function">appear</span>(<span class="syntax">speed</span>=<span class="number">.025</span>): Animates the text to appear.
 - <span class="function">get_width</span>(<span class="syntax">string</span>, <span class="syntax">font</span>=<span class="boolean">None</span>): Gets the width of a string.
 
-### Usage Example
+### Example
 
    To create and manipulate text in Ursina, you can follow this simple example:
 
@@ -530,7 +530,7 @@ Audio(sound_file_name='', volume=1, pitch=1, balance=0,
 - <span class="function">fade_in</span>(<span class="sytnax">value</span>=<span class="number">1</span>, <span class="syntax">duration</span>=<span class="number">.5</span>, <span class="syntax">delay</span>=<span class="number">0</span>, <span class="syntax">curve</span>=curve.in_expo, <span class="syntax">resolution</span>=<span class="boolean">None</span>, <span class="syntax">interrupt</span>=<span class="string">'finish'</span>): Fades in the volume of the audio.
 - <span class="function">fade_out</span>(<span class="syntax">value</span>=<span class="number">0</span>, <span class="syntax">duration</span>=<span class="number">.5</span>, <span class="syntax">delay</span>=<span class="number">0</span>, <span class="syntax">curve</span>=curve.in_expo, <span class="syntax">resolution</span>=<span class="boolean">None</span>, <span class="syntax">interrupt</span>=<span class="string">'finish'</span>): Fades out the volume of the audio.
 
-### Usage Example
+### Example
 
 ```python
 from ursina import *

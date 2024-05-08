@@ -29,6 +29,18 @@ export default defineConfig({
 					label: 'Asset Store',
 					autogenerate: { directory: 'asset-store' },
 				},
+				{
+					label: 'Networking',
+					autogenerate: { directory: 'networking' },
+				},
+				{
+					label: 'Build and Release',
+					autogenerate: { directory: 'build-release' },
+				},
+				{
+					label: 'FAQ',
+					autogenerate: { directory: 'faq' },
+				},
 			],
 		}),
 	],
